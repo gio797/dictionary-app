@@ -22,7 +22,7 @@ function WordItem(props) {
               <i className="fa-solid fa-play"></i>
             </button>
           </div>
-          <p>{props.wordData[0].meanings[0].partOfSpeech}</p>
+          <p>Noun</p>
           <h3>Meaning</h3>
           <ul>
             {props.wordData[0].meanings[0].definitions.map((item) => (
@@ -35,12 +35,13 @@ function WordItem(props) {
               <span key={nanoid()}>{item}</span>
             ))}
           </div>
-          <p>{props.wordData[0].meanings[1].partOfSpeech}</p>
+          <p>Verb</p>
           <h3>Meaning</h3>
           <ul>
-            {props.wordData[0].meanings[1].definitions.map((item) => (
-              <li key={nanoid()}>{item.definition}</li>
-            ))}
+            {props.wordData[0].meanings.length > 1 &&
+              props.wordData[0].meanings[1].definitions.map((item) => (
+                <li key={nanoid()}>{item.definition}</li>
+              ))}
           </ul>
           <p>Source</p>
           <p>{props.wordData[0].sourceUrls[0]}</p>
