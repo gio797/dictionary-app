@@ -28,6 +28,12 @@ function WordItem(props) {
               <li key={nanoid()}>{item.definition}</li>
             ))}
           </ul>
+          <h3>Synonyms</h3>
+          <div className="synonyms-wrapper">
+            {props.wordData[0].meanings[0].synonyms.map((item) => (
+              <span key={nanoid()}>{item}</span>
+            ))}
+          </div>
           <p>{props.wordData[0].meanings[1].partOfSpeech}</p>
           <h3>Meaning</h3>
           <ul>
@@ -35,6 +41,8 @@ function WordItem(props) {
               <li key={nanoid()}>{item.definition}</li>
             ))}
           </ul>
+          <p>Source</p>
+          <p>{props.wordData[0].sourceUrls[0]}</p>
         </div>
       )}
     </div>
