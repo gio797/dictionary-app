@@ -1,5 +1,6 @@
 import React from "react";
 import { nanoid } from "nanoid";
+
 function WordItem(props) {
   console.log(props);
 

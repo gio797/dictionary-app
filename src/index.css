@@ -99,3 +99,14 @@ input {
   border-radius: 5px;
   border: none;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 40px;
+}
+
+.logo {
+  margin-right: auto;
+}

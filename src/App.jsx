@@ -1,7 +1,13 @@
 import Form from "./Form";
+import Header from "./Header";
 
 function App() {
-  return <Form />;
+  return (
+    <div>
+      <Header />
+      <Form />
+    </div>
+  );
 }
 
 export default App;
