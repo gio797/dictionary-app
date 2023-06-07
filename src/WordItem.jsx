@@ -54,7 +54,9 @@ function WordItem(props) {
           </ul>
           <hr />
           <p className="grey-text">Source</p>
-          <p>{props.wordData[0].sourceUrls[0]}</p>
+          <a href={props.wordData[0].sourceUrls[0]} target="_blank">
+            <p>{props.wordData[0].sourceUrls[0]}</p>
+          </a>
         </div>
       )}
     </div>

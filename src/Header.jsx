@@ -11,16 +11,24 @@ function Header({ dark, toggleTheme }) {
   return (
     <header>
       <div className="logo">
-        <i className="fa-solid fa-book fa-2xl"></i>
+        <a href="/">
+          <i className="fa-solid fa-book fa-2xl"></i>
+        </a>
       </div>
       <select
         className={dark ? "dark" : null}
         value={selectedFont}
         onChange={(e) => setSelectedFont(e.target.value)}
       >
-        <option value="serif">serif</option>
-        <option value="sans-serif">sans-serif</option>
-        <option value="monospace">monospace</option>
+        <option value="serif" style={{ fontFamily: "serif" }}>
+          serif
+        </option>
+        <option value="sans-serif" style={{ fontFamily: "sans-serif" }}>
+          sans-serif
+        </option>
+        <option value="monospace" style={{ fontFamily: "monospace" }}>
+          monospace
+        </option>
       </select>
       <div className="toggler" onClick={toggleTheme}>
         {dark ? (
