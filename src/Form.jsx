@@ -14,9 +14,26 @@ function Form(props) {
 
   useEffect(() => {
     if (searchWord) {
-      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
-        .then((res) => res.json())
-        .then((data) => setResWord(data));
+      // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
+      //   .then((res) => res.json())
+      //   .then((data) => setResWord(data))
+
+      async function getWord() {
+        try {
+          const res = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`
+          );
+          const data = await res.json();
+          setResWord(data);
+          if (!response.ok) {
+            throw new Error(response.status);
+          }
+        } catch (error) {
+          console.log("there was an error");
+          console.log(error);
+        }
+      }
+      getWord();
     }
   }, [searchWord]);
 
