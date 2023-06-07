@@ -30,7 +30,7 @@ function Form() {
           onChange={(e) => setWord(e.target.value)}
         />
         <button className="search-btn">
-          <i className="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
         </button>
       </form>
       <WordItem wordData={resWord} />

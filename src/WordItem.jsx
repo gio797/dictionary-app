@@ -10,40 +10,50 @@ function WordItem(props) {
 
   return (
     <div>
-      <h1>search word</h1>
       {props.wordData.length > 0 && (
         <div className="word-wrapper">
           <div className="title-wrapper">
             <div className="title">
-              <h2>{props.wordData[0].word}</h2>
-              <p>{props.wordData[0].phonetics[0].text}</p>
+              <h1>{props.wordData[0].word}</h1>
+              <h3 className="violet">{props.wordData[0].phonetics[0].text}</h3>
             </div>
-            <button onClick={play}>
+            <button className="play-btn" onClick={play}>
               <i className="fa-solid fa-play"></i>
             </button>
           </div>
-          <p>Noun</p>
-          <h3>Meaning</h3>
+          <div className="flex">
+            <h3>noun</h3>
+            <hr />
+          </div>
+          <h3 className="grey-text">Meaning</h3>
           <ul>
             {props.wordData[0].meanings[0].definitions.map((item) => (
-              <li key={nanoid()}>{item.definition}</li>
+              <li key={nanoid()}>
+                <p>{item.definition}</p>
+              </li>
             ))}
           </ul>
-          <h3>Synonyms</h3>
+          <h3 className="grey-text">Synonyms</h3>
           <div className="synonyms-wrapper">
             {props.wordData[0].meanings[0].synonyms.map((item) => (
-              <span key={nanoid()}>{item}</span>
+              <span className="violet" key={nanoid()}>
+                {item}
+              </span>
             ))}
           </div>
-          <p>Verb</p>
-          <h3>Meaning</h3>
+          <h3>verb</h3>
+          <hr />
+          <h3 className="grey-text">Meaning</h3>
           <ul>
             {props.wordData[0].meanings.length > 1 &&
               props.wordData[0].meanings[1].definitions.map((item) => (
-                <li key={nanoid()}>{item.definition}</li>
+                <li key={nanoid()}>
+                  <p>{item.definition}</p>
+                </li>
               ))}
           </ul>
-          <p>Source</p>
+          <hr />
+          <p className="grey-text">Source</p>
           <p>{props.wordData[0].sourceUrls[0]}</p>
         </div>
       )}
