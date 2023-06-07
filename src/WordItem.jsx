@@ -2,7 +2,7 @@ import React from "react";
 import { nanoid } from "nanoid";
 
 function WordItem(props) {
-  console.log(props);
+  // console.log(props);
 
   function play() {
     new Audio(props.wordData[0].phonetics[0].audio).play();
