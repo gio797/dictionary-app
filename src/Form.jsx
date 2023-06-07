@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import WordItem from "./WordItem";
 
-function Form() {
+function Form(props) {
   const [word, setWord] = useState("");
   const [searchWord, setSearchWord] = useState();
   const [resWord, setResWord] = useState({});
-  //   console.log(searchWord);
+  console.log(resWord);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,7 +21,7 @@ function Form() {
   }, [searchWord]);
 
   return (
-    <div>
+    <div className="content-wrapper">
       <form onSubmit={handleSubmit}>
         <input
           name="word"
@@ -30,10 +30,10 @@ function Form() {
           onChange={(e) => setWord(e.target.value)}
         />
         <button className="search-btn">
-          <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+          <i className="fa-solid fa-magnifying-glass fa-2xl"></i>
         </button>
       </form>
-      <WordItem wordData={resWord} />
+      <WordItem wordData={resWord} dark={props.dark} />
     </div>
   );
 }

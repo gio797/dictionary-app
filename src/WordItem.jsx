@@ -2,8 +2,6 @@ import React from "react";
 import { nanoid } from "nanoid";
 
 function WordItem(props) {
-  // console.log(props);
-
   function play() {
     new Audio(props.wordData[0].phonetics[0].audio).play();
   }
@@ -29,7 +27,7 @@ function WordItem(props) {
           <ul>
             {props.wordData[0].meanings[0].definitions.map((item) => (
               <li key={nanoid()}>
-                <p>{item.definition}</p>
+                <p className={props.dark ? "dark" : null}>{item.definition}</p>
               </li>
             ))}
           </ul>
@@ -48,7 +46,9 @@ function WordItem(props) {
             {props.wordData[0].meanings.length > 1 &&
               props.wordData[0].meanings[1].definitions.map((item) => (
                 <li key={nanoid()}>
-                  <p>{item.definition}</p>
+                  <p className={props.dark ? "dark" : null}>
+                    {item.definition}
+                  </p>
                 </li>
               ))}
           </ul>
