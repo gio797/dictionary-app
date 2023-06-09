@@ -37,14 +37,14 @@ function Form(props) {
           `https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`
         );
         if (!res.ok) {
-          throw Error("coold not find the word");
+          // throw Error("coold not find the word");
+          throw new Error(res.status);
         }
         const data = await res.json();
         setResWord(data);
         setError(null);
       } catch (err) {
-        // console.log(error);
-        // alert(err.message);
+        console.log(err);
         setError(err.message);
         setResWord({});
       }
@@ -67,7 +67,7 @@ function Form(props) {
           <i className="fa-solid fa-magnifying-glass fa-2xl"></i>
         </button>
       </form>
-      {error && <h3>{error}</h3>}
+      {error && <h3>error: {error}</h3>}
       <WordItem wordData={resWord} dark={props.dark} />
     </div>
   );
