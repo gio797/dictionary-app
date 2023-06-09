@@ -15,22 +15,6 @@ function Form(props) {
   }
 
   useEffect(() => {
-    // if (!ref.current) {
-    //   ref.current = true;
-    //   return;
-    // }
-
-    // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
-    //   .then((res) => {
-    //     if (!res.ok) {
-    //       throw Error;
-    //     }
-    //     console.log(res);
-    //     return res.json();
-    //   })
-    //   .then((data) => setResWord(data))
-    //   .catch((error) => console.log(error.message));
-
     async function getWord() {
       try {
         const res = await fetch(
